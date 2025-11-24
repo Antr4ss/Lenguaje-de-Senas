@@ -50,8 +50,8 @@ history = model.fit(X_train, y_train,
 loss, accuracy = model.evaluate(X_test, y_test)
 print(f"Precisión en test: {accuracy*100:.2f}%")
 
-model.save('my_model.keras')
-print("Modelo guardado como 'my_model.keras'")
+model.save('modelo_senas_estatico.h5')
+print("Modelo guardado como 'modelo_senas_estatico.h5'")
 
 # Guardar también los nombres de las clases para usarlos en la webcam
 import json

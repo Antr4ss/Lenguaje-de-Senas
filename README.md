@@ -23,7 +23,7 @@ pip install opencv-python mediapipe numpy tensorflow scikit-learn
 - `2_entrenar_datos.py`: Script para entrenar el modelo y guardarlo (`my_model.keras` / `modelo_senas_estatico.h5`).
 - `3_probar_camara.py`: Script principal para probar el reconocimiento con la cámara web.
 - `asl_alphabet_train/`: Carpeta que debe contener las subcarpetas con las imágenes de entrenamiento (A, B, C...).
-- `data.pickle`: Archivo generado que contiene los datos procesados.
+- `data.pickle`: Archivo que contiene los datos procesados (landmarks de las manos y etiquetas) serializados con el módulo `pickle` de Python. Esto permite guardar objetos de Python (listas, diccionarios) en un archivo binario para cargarlos rápidamente después.
 - `class_names.json`: Archivo que guarda los nombres de las clases (letras).
 
 ## Uso
@@ -42,8 +42,7 @@ Entrena la red neuronal con los datos procesados:
 ```bash
 python 2_entrenar_datos.py
 ```
-Esto generará el modelo entrenado y el archivo `class_names.json`.
-> **Nota:** El script de entrenamiento guarda el modelo como `my_model.keras`. El script de prueba busca `modelo_senas_estatico.h5`. Asegúrate de renombrar el archivo o actualizar el código según corresponda.
+Esto generará el modelo entrenado (`modelo_senas_estatico.h5`) y el archivo `class_names.json`.
 
 ### 3. Probar con la Cámara
 Ejecuta el script de prueba:
